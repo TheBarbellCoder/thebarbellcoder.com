@@ -1,15 +1,34 @@
 ---
+import Navbar from "../layouts/navbar.astro";
+import Footer from "../layouts/footer.astro";
+import { Icon } from "astro-icon";
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<link rel="stylesheet" href="/styles/global.css" />
+		<title>The Barbell Coder</title>
+		<script src="https://kit.fontawesome.com/fa6f2b68f5.js" crossorigin="anonymous"></script>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="flex flex-col min-h-screen text-gray-dark">
+	    <Navbar />
+	    <div class="container mx-auto flex flex-col justify-center items-center grow"> 
+	        <img class="overflow-clip w-40 h-40 rounded-full border-4 border-gray-light" src="/assets/profile.jpeg" alt="Profie Picture" />
+	        <div class="text-3xl font-semibold p-4 text-center">Avinash Ravi Shankar</div> 
+	        <div class="hidden md:block text-lg font-thin font-mono text-center">Embedded AI developer | Technical copy writer | Love MetCons!</div>
+	        <div class="flex justify-center space-x-3 space-y-1">
+	            <a href="https://github.com/TheBarbellCoder" target="_blank"><Icon name=bi:github class="w-6" /></a>
+	            <a href="https://medium.com/@thebarbellcoder" target="_blank"><Icon name=bi:medium class="w-6" /></a>
+	            <a href="https://www.linkedin.com/in/avinashcr/" target="_blank"><Icon name=bi:linkedin class="w-6" /></a>
+	        </div>
+	        <div class="text-xl font-medium p-4 lg:w-9/12 xl:w-1/2 text-center">
+	            <b>Welcome to The Barbell Coder.</b> A platform where I geek out on software engineering, algorithms, AI, and all the math in between.
+	        </div>
+	    </div>
+	    <Footer />
 	</body>
 </html>
