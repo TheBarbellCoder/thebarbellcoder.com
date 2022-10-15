@@ -1,0 +1,24 @@
+---
+import Navbar from "../layouts/navbar.astro";
+import Footer from "../layouts/footer.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="stylesheet" href="/styles/global.css" />
+    </head>
+    <body class="flex flex-col min-h-screen text-gray-dark">
+        <Navbar />
+        <div class="container mx-auto flex flex-col justify-center items-center p-2 md:p-0">
+        <article class="container prose mt-16">
+            <slot />
+        </article>
+        </div>
+        <Footer />
+    </body>
+</html>
