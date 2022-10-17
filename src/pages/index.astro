@@ -12,21 +12,20 @@ import { Icon } from "astro-icon";
 		<meta name="generator" content={Astro.generator} />
 		<link rel="stylesheet" href="/styles/global.css" />
 		<title>The Barbell Coder</title>
-		<script src="https://kit.fontawesome.com/fa6f2b68f5.js" crossorigin="anonymous"></script>
 	</head>
 	<body class="flex flex-col min-h-screen text-gray-dark">
 	    <Navbar />
-	    <div class="container mx-auto flex flex-col justify-center items-center grow"> 
+	    <div class="container max-w-prose flex flex-col self-center justify-center items-center grow p-4"> 
 	        <img class="overflow-clip w-40 h-40 rounded-full border-4 border-gray-light" src="/assets/profile.jpeg" alt="Profie Picture" />
-	        <div class="text-3xl font-semibold p-4 text-center">Avinash Ravi Shankar</div> 
-	        <div class="hidden md:block text-lg font-thin font-mono text-center">Embedded AI developer | Technical copy writer | Love MetCons!</div>
-	        <div class="flex justify-center space-x-3 space-y-1">
+	        <div class="text-4xl font-sans font-[900] pb-2 text-center">Avinash Ravi Shankar</div> 
+	        <div class="hidden md:block font-mono font-[400] pb-4 text-sm text-center">Embedded AI developer | Technical copy writer | Love MetCons!</div>
+	        <div class="flex space-x-3 space-y-1 pb-4">
 	            <a href="https://github.com/TheBarbellCoder" target="_blank"><Icon name=bi:github class="w-6" /></a>
 	            <a href="https://medium.com/@thebarbellcoder" target="_blank"><Icon name=bi:medium class="w-6" /></a>
 	            <a href="https://www.linkedin.com/in/avinashcr/" target="_blank"><Icon name=bi:linkedin class="w-6" /></a>
 	        </div>
-	        <div class="text-xl font-medium p-4 lg:w-9/12 xl:w-1/2 text-center">
-	            <b>Welcome to The Barbell Coder.</b> A platform where I geek out on software engineering, algorithms, AI, and all the math in between.
+	        <div class="text-center pt-4">
+	            <div class="font-[900] text-xl">Welcome to The Barbell Coder.</div> <div class="font-serif text-lg">A platform where I geek out on software engineering concepts, algorithms, AI, and all the math in between!</div>
 	        </div>
 	    </div>
 	    <Footer />

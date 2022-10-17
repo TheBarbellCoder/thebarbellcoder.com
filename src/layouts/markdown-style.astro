@@ -1,0 +1,35 @@
+---
+import Navbar from "../layouts/navbar.astro";
+import Footer from "../layouts/footer.astro";
+import {Picture} from "@astrojs/image/components";
+const { frontmatter } = Astro.props;
+console.log(frontmatter.banner);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="stylesheet" href="/styles/global.css" />
+		<title>{frontmatter.title}</title>
+    </head>
+    <body class="flex flex-col min-h-screen text-gray-dark">
+        <Navbar />
+        <div class="container mx-auto flex flex-col justify-center items-center mt-16 p-2 md:p-0">
+            <div class="conatainer max-w-prose">
+                <div class="container opacity-80 uppercase underline underline-offset-4 decoration-2 decoration-orange tracking-widest">{frontmatter.kicker}</div>
+                <div class="text-5xl font-black pt-3 pb-10">{frontmatter.title}</div>
+            </div>
+            <div class="max-w-screen-lg">
+                <Picture src={frontmatter.banner} widths={[1200]} aspectRatio="16:9" alt="Article Banner"/>
+            </div>
+            <article class="container prose pt-10">
+                <slot />
+            </article>
+        </div>
+        <Footer />
+    </body>
+</html>
