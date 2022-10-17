@@ -1,7 +1,10 @@
 ---
 layout: "../../layouts/markdown-style.astro"
+
+kicker: "A Complete Guide"
+title: "Readme Markdown Syntax"
+banner: "/assets/M1.png"
 ---
-# The Complete Guide of <br> Readme Markdown Syntax</h1>
 
 Markdown is a syntax for styling all forms of writing on the GitHub platform.
 Mostly, it is just regular text with a few non-alphabetic characters thrown in, like ```git # or * ```
