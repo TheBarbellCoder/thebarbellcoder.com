@@ -1,7 +1,7 @@
 ---
-layout: "../../layouts/markdown-style.astro"
+layout: "../../layouts/blog-style.astro"
 
-kicker: "A Complete Guide"
+kicker: "The Complete Guide"
 title: "Readme Markdown Syntax"
 banner: "/assets/M1.png"
 ---

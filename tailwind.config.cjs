@@ -63,8 +63,6 @@ module.exports = {
                             textUnderlineOffset: '4px',
                             textDecorationThickness: 'auto',
                             '&:hover': {
-                                backgroundColor: '#d0885680',
-                                color: theme('colors.gray.dark'),
                                 textDecorationColor: theme('colors.orange'),
                                 textUnderlineOffset: '8px',
                                 textDecorationThickness: '2px'
