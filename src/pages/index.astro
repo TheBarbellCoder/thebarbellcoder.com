@@ -1,6 +1,7 @@
 ---
 import Navbar from "../layouts/navbar.astro";
 import Footer from "../layouts/footer.astro";
+import BlogRoll from "../layouts/blog-roll.astro";
 import { Icon } from "astro-icon";
 ---
 
@@ -14,20 +15,29 @@ import { Icon } from "astro-icon";
 		<title>The Barbell Coder</title>
 	</head>
 	<body class="flex flex-col min-h-screen text-gray-dark">
-	    <Navbar />
-	    <div class="container max-w-prose flex flex-col self-center justify-center items-center grow p-4"> 
-	        <img class="overflow-clip w-40 h-40 rounded-full border-4 border-gray-light" src="/assets/profile.jpeg" alt="Profie Picture" />
-	        <div class="text-4xl font-sans font-[900] pb-2 text-center">Avinash Ravi Shankar</div> 
-	        <div class="hidden md:block font-mono font-[400] pb-4 text-sm text-center">Embedded AI developer | Technical copy writer | Love MetCons!</div>
-	        <div class="flex space-x-3 space-y-1 pb-4">
-	            <a href="https://github.com/TheBarbellCoder" target="_blank"><Icon name=bi:github class="w-6" /></a>
-	            <a href="https://medium.com/@thebarbellcoder" target="_blank"><Icon name=bi:medium class="w-6" /></a>
-	            <a href="https://www.linkedin.com/in/avinashcr/" target="_blank"><Icon name=bi:linkedin class="w-6" /></a>
+	  <Navbar />
+	  <div class="w-full bg-gray-light px-2 sm:px-4">
+	    <div class="mt-24 container mx-auto grid grid-cols-2 gap-24">
+				<div class="col-span-2 text-left text-5xl font-[700]">Exploring computer science through tiny projects</div>
+				<div class="col-span-2 flex mb-16">
+	        <img class="h-40 rounded-2xl inline-block" src="/assets/profile.jpeg" alt="Profie Picture" />
+	        <div class="text-left max-w-prose pl-8">
+	          <div class="font-black text-xl inline">Hi! 👋 My name is Avinash, and welcome to The Barbell Coder.</div>
+	          <div class="font-serif text-lg inline"> A platform where I geek out on software engineering concepts, algorithms, AI, and all the math in between!</div>
+	        	<div class="flex space-x-3 space-y-1 items-center pt-4 md:pt-0">
+	          	<a href="https://github.com/TheBarbellCoder" target="_blank"><Icon name=bi:github class="w-6" /></a>
+	          	<a href="https://medium.com/@thebarbellcoder" target="_blank"><Icon name=bi:medium class="w-6" /></a>
+	          	<a href="https://www.linkedin.com/in/avinashcr/" target="_blank"><Icon name=bi:linkedin class="w-6" /></a>
+	        	</div>
 	        </div>
-	        <div class="text-center pt-4">
-	            <div class="font-[900] text-xl">Welcome to The Barbell Coder.</div> <div class="font-serif text-lg">A platform where I geek out on software engineering concepts, algorithms, AI, and all the math in between!</div>
-	        </div>
+	      </div>
 	    </div>
-	    <Footer />
+	  </div>
+	  <div class="container mx-auto my-10 px-2 sm:px-4">
+	    <div class="text-2xl font-medium tracking-wider font-mono">Blogs</div> 
+	    <hr style="color: #edefee;">
+		</div>
+	  <BlogRoll />
+	  <Footer />
 	</body>
 </html>

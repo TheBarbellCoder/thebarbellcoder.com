@@ -1,0 +1,47 @@
+---
+import Navbar from "../layouts/navbar.astro";
+import Footer from "../layouts/footer.astro";
+import {Picture} from "@astrojs/image/components";
+
+const { frontmatter } = Astro.props;
+var ogTitle = frontmatter.title;
+ogTitle = ogTitle.concat(" ", "| The Barbell Coder");
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="stylesheet" href="/styles/global.css" />
+		<link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+
+		<meta property="og:title" content={ogTitle} />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content={Astro.props.url} />
+		<meta property="og:image" content={frontmatter.banner} />
+		<meta property="og:site_name" content="The Barbell Coder" />
+		<meta property="og:description" content={frontmatter.description} />
+
+		<title>{frontmatter.title}</title>
+
+    </head>
+    <body class="flex flex-col min-h-screen text-gray-dark">
+        <Navbar />
+        <div class="container mx-auto flex flex-col justify-center items-center mt-20 px-2 lg:px-0">
+            <div class="conatainer max-w-prose">
+                <div class="w-fit container uppercase underline underline-offset-4 decoration-1 tracking-wider font-mono">{frontmatter.kicker}</div>
+                <div class="text-5xl font-black pt-4 pb-12">{frontmatter.title}</div>
+            </div>
+            <div class="max-w-screen-lg">
+                <Picture src={frontmatter.banner} widths={[1200]} aspectRatio="16:9" alt="Article Banner"/>
+            </div>
+            <article class="container prose pt-12">
+                <slot />
+            </article>
+        </div>
+        <Footer />
+    </body>
+
+</html>
