@@ -5,6 +5,7 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://www.thebarbellcoder.com",
   integrations: [tailwind(), image({serviceEntryPoint: '@astrojs/image/sharp'})],
   vite: {ssr: {external: ["svgo"]}},
   markdown: {

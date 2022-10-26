@@ -1,39 +1,31 @@
 ---
-import {SEO} from "astro-seo";
 import Navbar from "../layouts/navbar.astro";
 import Footer from "../layouts/footer.astro";
 import {Picture} from "@astrojs/image/components";
 
 const { frontmatter } = Astro.props;
-const ogTitle = frontmatter.title;
-const ogImage = frontmatter.banner;
+var ogTitle = frontmatter.title;
+ogTitle = ogTitle.concat(" ", "| The Barbell Coder");
 ---
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <SEO 
-            title={frontmatter.title}
-            description={frontmatter.description}
-            openGraph={
-                {
-                    basic: {
-                        title: {ogTitle},
-                        type: "image/png",
-                        image: {ogImage}
-                    },
-                    image: {
-                        alt: "Blog banner"
-                    }
-                }
-            }
-        />
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="viewport" content="width=device-width" />
 		<link rel="stylesheet" href="/styles/global.css" />
-		<!--title>{frontmatter.title}</title-->
+		<link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+
+		<meta property="og:title" content={ogTitle} />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content={Astro.props.url} />
+		<meta property="og:image" content={frontmatter.banner} />
+		<meta property="og:site_name" content="The Barbell Coder" />
+		<meta property="og:description" content={frontmatter.description} />
+
+		<title>{frontmatter.title}</title>
+
     </head>
     <body class="flex flex-col min-h-screen text-gray-dark">
         <Navbar />
