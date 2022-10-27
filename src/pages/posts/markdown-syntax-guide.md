@@ -3,7 +3,13 @@ layout: "../../layouts/blog-style.astro"
 
 kicker: "The Complete Guide"
 title: "Readme Markdown Syntax"
-banner: "/assets/M1.png"
+description: "A complete guide to all the markdown features supported in this website"
+banner: "/assets/M.png"
+accentLight: "#f8aa69"
+accentDark: "#795333"
+
+draft: true
+
 ---
 
 Markdown is a syntax for styling all forms of writing on the GitHub platform.
