@@ -9,12 +9,13 @@ const posts = await Astro.glob("../pages/posts/*.md");
     posts.map((post) => (
       <a class="" href={post.url}>
         <article class="px-2 sm:px-0 box-content">
-          <div class="w-fit py-1 uppercase tracking-wider font-mono hidden lg:block">{post.frontmatter.kicker}</div>
-          <div class="max-w-prose pt-1 overflow-hidden">
+          <div class="w-fit pb-1 uppercase tracking-wider font-mono font-[500] underline hidden lg:block">{post.frontmatter.kicker}</div>
+          <div class="max-w-prose pb-1 overflow-hidden">
             <Picture src={post.frontmatter.banner} widths={[1200]} aspectRatio="21:9" alt="Article Banner"/>
           </div>
-          <div class="text-3xl py-1 font-bold">{post.frontmatter.title}</div>
-          <div class="">{post.frontmatter.description}</div> 
+          <!--div class="text-3xl py-1 font-black">{post.frontmatter.title}</div-->
+          <div class="font-serif py-1 text-xl font-medium w-full">{post.frontmatter.description}</div> 
+          <hr class="my-10" style="color:#edefee;">
         </article>
       </a>
     ))

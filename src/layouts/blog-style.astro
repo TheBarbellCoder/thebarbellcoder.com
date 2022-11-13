@@ -4,6 +4,8 @@ import Footer from "../layouts/footer.astro";
 import {Picture} from "@astrojs/image/components";
 
 const { frontmatter } = Astro.props;
+const accentLight = frontmatter.accentLight; 
+const accentDark = frontmatter.accentDark; 
 var ogTitle = frontmatter.title;
 ogTitle = ogTitle.concat(" ", "| The Barbell Coder");
 ---
@@ -20,7 +22,7 @@ ogTitle = ogTitle.concat(" ", "| The Barbell Coder");
 		<meta property="og:title" content={ogTitle} />
 		<meta property="og:type" content="article" />
 		<meta property="og:url" content={Astro.props.url} />
-		<meta property="og:image" content={frontmatter.banner} />
+		<!--meta property="og:image" content={frontmatter.banner} /-->
 		<meta property="og:site_name" content="The Barbell Coder" />
 		<meta property="og:description" content={frontmatter.description} />
 
@@ -29,19 +31,71 @@ ogTitle = ogTitle.concat(" ", "| The Barbell Coder");
     </head>
     <body class="flex flex-col min-h-screen text-gray-dark">
         <Navbar />
-        <div class="container mx-auto flex flex-col justify-center items-center mt-20 px-2 lg:px-0">
+        <style is:global define:vars={{accentLight, accentDark}}>
+            article > p:first-child:first-letter {
+                line-height: 1;
+                font-size: 3rem;
+                font-weight: bold;
+                padding-top: 0.5rem;
+                padding-right: 0.25rem;
+                color: var(--accentLight);
+            }
+
+            article a:hover {
+                color: var(--accentLight);
+                text-decoration-color: var(--accentLight);
+            }
+
+            article .gist .gist-file {
+                margin: none;
+                border: none;
+                border-radius: 8px;
+            }
+
+            article .gist .gist-data {
+                border-radius: 8px;
+                border-bottom: none; 
+            }
+
+            article .gist .highlight {
+                color: #41403c;
+                background-color: #edefee;
+            }
+
+            article .gist .blob-num {
+                color: #edefee;
+                background-color: var(--accentDark);
+            }
+
+            article .gist tr {
+                border: none;
+            }
+            article .gist tr:first-child td {
+                padding-top: 0.6rem !important;
+            }
+
+            article .gist tr:last-child td {
+                padding-bottom: 0.4rem !important;
+            }
+
+            article .gist .gist-meta {
+                display: none;
+            }
+        </style>
+        <div class="container mx-auto flex flex-col justify-start items-center mt-20 px-2 lg:px-0 grow">
             <div class="conatainer max-w-prose">
-                <div class="w-fit container uppercase underline underline-offset-4 decoration-1 tracking-wider font-mono">{frontmatter.kicker}</div>
-                <div class="text-5xl font-black pt-4 pb-12">{frontmatter.title}</div>
+                <div class="w-fit px-1 container uppercase decoration-1 tracking-wider font-mono font-[500] text-[color:var(--accentDark)] bg-[color:var(--accentLight)]">{frontmatter.kicker}</div>
+                <div class="text-5xl font-black pt-4 pb-7">{frontmatter.title}</div>
+                <div class="font-serif pb-7 text-2xl font-medium italic">{frontmatter.description}</div> 
+                <hr style="color: inherit;">
             </div>
-            <div class="max-w-screen-lg">
-                <Picture src={frontmatter.banner} widths={[1200]} aspectRatio="16:9" alt="Article Banner"/>
-            </div>
-            <article class="container prose pt-12">
+            <!--div class="max-w-screen-lg">
+                <Picture src={frontmatter.banner} widths={[1200]} aspectRatio="21:9" alt="Article Banner"/>
+            </div-->
+            <article class="container prose py-12 prose-code:text-[color:var(--accentDark)]">
                 <slot />
             </article>
         </div>
         <Footer />
     </body>
-
 </html>
