@@ -12,7 +12,7 @@ const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft);
         <article class="px-2 sm:px-0 box-content">
           <div class="w-fit pb-1 uppercase tracking-wider font-mono font-[500] underline hidden lg:block">{nonDraftPosts.frontmatter.kicker}</div>
           <div class="max-w-prose pb-1 overflow-hidden">
-            <Picture src={nonDraftPosts.frontmatter.banner} widths={[1200]} aspectRatio="21:9" alt="Article Banner"/>
+            <Picture src={nonDraftPosts.frontmatter.banner} widths={[1200]} aspectRatio="16:9" alt="Article Banner"/>
           </div>
           <!--div class="text-3xl py-1 font-black">{post.frontmatter.title}</div-->
           <div class="font-serif py-1 text-xl font-medium w-full">{nonDraftPosts.frontmatter.description}</div> 
